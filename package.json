@@ -4,16 +4,21 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite-node src/index.ts",
     "build": "tsc && vite build",
     "test": "vitest --ui",
-    "preview": "vite preview"
+    "posttest": "npm run format",
+    "preview": "vite preview",
+    "format": "prettier --log-level=warn --write \"**/*.{ts,tsx,css,md}\""
   },
   "devDependencies": {
     "@vitest/ui": "^1.6.0",
+    "prettier": "^3.3.3",
     "typescript": "^5.2.2",
     "vite": "^5.3.3",
     "vite-node": "^1.6.0",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "husky": "^9.1.5"
   }
 }

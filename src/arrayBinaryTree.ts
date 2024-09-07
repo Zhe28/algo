@@ -5,7 +5,7 @@ export class ArrayBinaryTree {
   /**
    * @description 数组二叉树
    */
-  tree: arrayBinaryTreeNode
+  tree: arrayBinaryTreeNode;
 
   /**
    * @constructor
@@ -67,8 +67,10 @@ export class ArrayBinaryTree {
    * @return {arrayBinaryTreeNode}
    */
   levelOrder(): arrayBinaryTreeNode {
-    const res = [];
-    this.tree.forEach((node: number) => node !== null && res.push(node));
+    const res: arrayBinaryTreeNode = [];
+    this.tree.forEach((node: number | null): void => {
+      node !== null && res.push(node);
+    });
     return res;
   }
 
@@ -76,11 +78,11 @@ export class ArrayBinaryTree {
     // 索引数值为null ， 返回 null;
     if (this.value(index) === null) return;
 
-    order === 'pre' && res.push(this.value(index))
-    this.dfs(this.left(index), order, res)
-    order === 'in' && res.push(this.value(index))
-    this.dfs(this.right(index), order, res)
-    order === 'post' && res.push(this.value(index))
+    order === "pre" && res.push(this.value(index));
+    this.dfs(this.left(index), order, res);
+    order === "in" && res.push(this.value(index));
+    this.dfs(this.right(index), order, res);
+    order === "post" && res.push(this.value(index));
   }
 
   /**
@@ -88,8 +90,8 @@ export class ArrayBinaryTree {
    * @return {arrayBinaryTreeNode}
    */
   preOrder(): arrayBinaryTreeNode {
-    const res = []
-    this.dfs(0, 'pre', res)
+    const res: arrayBinaryTreeNode = [];
+    this.dfs(0, "pre", res);
     return res;
   }
 
@@ -98,8 +100,8 @@ export class ArrayBinaryTree {
    * @return {arrayBinaryTreeNode}
    */
   inOrder(): arrayBinaryTreeNode {
-    const res = []
-    this.dfs(0, 'in', res)
+    const res: arrayBinaryTreeNode = [];
+    this.dfs(0, "in", res);
     return res;
   }
 
@@ -108,8 +110,8 @@ export class ArrayBinaryTree {
    * @return {arrayBinaryTreeNode}
    */
   postOrder(): arrayBinaryTreeNode {
-    const res = []
-    this.dfs(0, 'post', res)
+    const res: arrayBinaryTreeNode = [];
+    this.dfs(0, "post", res);
     return res;
   }
 }
