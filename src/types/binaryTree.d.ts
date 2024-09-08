@@ -1,7 +1,7 @@
 declare type TreeNode = {
-  value: number;
-  left?: TreeNode;
-  right?: TreeNode;
+	value: number;
+	left?: TreeNode;
+	right?: TreeNode;
 };
 /**
  * 二叉树的层序遍历

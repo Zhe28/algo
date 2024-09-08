@@ -3,21 +3,21 @@ const treeNode: TreeNode = {
 	left: {
 		value: 2,
 		left: {
-			value: 4
+			value: 4,
 		},
 		right: {
-			value: 5
-		}
+			value: 5,
+		},
 	},
 	right: {
 		value: 3,
 		left: {
-			value: 6
+			value: 6,
 		},
 		right: {
-			value: 7
-		}
-	}
+			value: 7,
+		},
+	},
 };
 
 class BinaryTree {
